@@ -1,4 +1,5 @@
 # React菜雞鐵人賽-30天範例code
+![](https://i.imgur.com/PdsiWss.png)
 
 ### 文章列表
 - [第12屆鐵人賽-菜雞們，讓我們一起征服JS及React吧 系列文章](https://ithelp.ithome.com.tw/users/20130155/ironman/3544)
