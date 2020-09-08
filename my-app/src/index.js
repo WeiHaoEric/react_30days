@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import HelloWorld from "./components/HelloWorld" //<-- 引入我們的HelloWorld component
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <HelloWorld msg={"Well Done~ Baby!!"} 
+                fontColor={"gold"}   //<--加入文字顏色 
+                bgColor={"black"}    //<--加入背景顏色 
+                />,   //<-- 使用它就像用一個<>標籤符號，裡頭放入HelloWorld, 並在尾端給他一個 /，做為結尾
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
