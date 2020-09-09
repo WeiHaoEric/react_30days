@@ -4,7 +4,7 @@ import CounterOne, { OneReducer } from "./components/testRedux/CounterOne";
 import CounterTwo, { TwoReducer } from "./components/testRedux/CounterTwo";
 
 
-export const AppContext = createContext({});
+export const ContextStore = createContext({});
 
 // *
 // 為了讓更頂層的 component 可以抓到底層component的狀態，
@@ -22,12 +22,12 @@ function Titles() {
   const [twoState, twoDispatch] = twoR;
 
   return (
-    <AppContext.Provider value={{reducers}}>
+    <ContextStore.Provider value={{reducers}}>
       <h1>{`OneCounter:${oneState}`}</h1>
       <h1>{`TwoCounter:${twoState}`}</h1>
       <CounterOne />
       <CounterTwo />
-    </AppContext.Provider>
+    </ContextStore.Provider>
     
   )
 }

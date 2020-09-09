@@ -1,5 +1,5 @@
 import React, { useReducer, useContext } from "react";
-import {AppContext} from  "../../index"
+import {ContextStore} from  "../../index"
 
 export function OneReducer(state, action) {
   console.log("One Reducer " + action.type);
@@ -16,7 +16,7 @@ export function OneReducer(state, action) {
 export default function CounterOne() {
     // const [state, dispatch] = useReducer(OneReducer, 5);             //<-- 移除原本在local端使用useReducer
 
-    const [state, dispatch] = useContext(AppContext)['reducers']['one']; //<-- 改為在上層使用，並透過context傳遞過來這邊使用，達到全部的component都能存取共同的資訊
+    const [state, dispatch] = useContext(ContextStore)['reducers']['one']; //<-- 改為在上層使用，並透過context傳遞過來這邊使用，達到全部的component都能存取共同的資訊
   return (
     <>
       <h2>{state}</h2>
