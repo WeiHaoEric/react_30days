@@ -1,5 +1,8 @@
 import React, { useReducer, useContext } from "react";
-import {ContextStore} from  "../../index"
+import { ContextStore } from "../../index";
+
+// export const OneState = { init: 5, max: 99, min: 0 };
+export const OneState = 5;
 
 export function OneReducer(state, action) {
   console.log("One Reducer " + action.type);
@@ -14,13 +17,14 @@ export function OneReducer(state, action) {
 }
 
 export default function CounterOne() {
-    // const [state, dispatch] = useReducer(OneReducer, 5);             //<-- 移除原本在local端使用useReducer
-
-    const [state, dispatch] = useContext(ContextStore)['reducers']['one']; //<-- 改為在上層使用，並透過context傳遞過來這邊使用，達到全部的component都能存取共同的資訊
+  console.log("Counter One", useContext(ContextStore));
+  const {globalState, globalDispatch} = useContext(ContextStore); //<--
+  const state = globalState.one;
   return (
     <>
       <h2>{state}</h2>
-      <button onClick={()=>dispatch({type:"ADD"})}>加1</button> <button onClick={()=>dispatch({type:"SUB"})}>減1</button>
+      <button onClick={() => globalDispatch({ type: "ADD" })}>加1</button>
+      <button onClick={() => globalDispatch({ type: "SUB" })}>減1</button>
     </>
   );
 }
