@@ -6,15 +6,17 @@ import React, { useState } from "react";
 // <Button1 /> <Button2 />
 // *
 export default function Counter() {
-  const [numState, setNumState] = useState(5); //<-- 給定一個預設值5
-  const [showColor, setShowColor] = useState(false); //<-- 給定預設的bgColor=white
+  const [stateList, setYourState] = useState({ value: 5, showColor: false });   //<-- 改用object來做狀態的控制
+
   return (
     <>
-      <h1 style={{backgroundColor:showColor?"yellow":"white"}}>{numState}</h1>
+      <h1 style={{ backgroundColor: stateList['showColor'] ? "yellow" : "white" }}>
+        {stateList["value"]}
+      </h1>
       <button
         onClick={() => {
           console.log("Counter+1");
-          return setNumState(numState + 1);
+          return setYourState({ ...stateList, value: stateList["value"] + 1 });
         }}
       >
         加1
@@ -23,7 +25,7 @@ export default function Counter() {
       <button
         onClick={() => {
           console.log("Counter-1");
-          return setNumState(numState - 1);
+          return setYourState({ ...stateList, value: stateList["value"] - 1 });
         }}
       >
         減1
@@ -31,12 +33,12 @@ export default function Counter() {
 
       <button
         onClick={() => {
-          console.log("showColor is:"+showColor);
-          return setShowColor(!showColor);
+          console.log("showColor is:" + stateList['showColor']);
+          return setYourState({ ...stateList, showColor: !stateList["showColor"] });
         }}
       >
-				{showColor?"關閉":"打開"}
-			</button>
+        {stateList['showColor'] ? "關閉" : "打開"}
+      </button>
     </>
   );
 }
