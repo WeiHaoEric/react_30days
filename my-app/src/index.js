@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from "./components/Counter";
+import Message from "./components/Context_Example/Message";
 
 ReactDOM.render(
-  <Counter/>,
+  <Message/>,
   document.getElementById('root')
 );
