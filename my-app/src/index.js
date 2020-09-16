@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Message from "./components/Context_Example/Message";
+import Message from "./components/ContextExample/Message";
 
 ReactDOM.render(
   <Message/>,
