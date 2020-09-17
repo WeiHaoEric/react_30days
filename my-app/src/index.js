@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Message from "./components/ContextExample/Message";
+import ShowDiffText from "./components/ReducerExample/ShowDiffText";
 
 ReactDOM.render(
-  <Message/>,
+  <ShowDiffText/>,
   document.getElementById('root')
 );
