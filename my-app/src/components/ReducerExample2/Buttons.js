@@ -4,7 +4,6 @@ import {contextStore} from "./ShowDiffText";
 
 export default function Buttons() {
     const {reducer} = useContext(contextStore);
-    const state = reducer[0]; 
     const dispatch = reducer[1];
 
 
