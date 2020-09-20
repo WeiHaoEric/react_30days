@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ShowDiffText from "./components/ReducerExample2/ShowDiffText"; //<--只要改這行的路徑
+import ToDoList from "./components/day16_ToDoApp/ToDoApp"
 
 ReactDOM.render(
-  <ShowDiffText/>,
+  <ToDoList/>,
   document.getElementById('root')
 );
