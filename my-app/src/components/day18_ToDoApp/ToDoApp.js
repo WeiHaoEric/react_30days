@@ -9,9 +9,9 @@ export default function ToDoApp() {
   const appReducer = useReducer(
     reducers,
     localStorage.getItem("toDoList")
-      ? localStorage.getItem("toDoList").split(",")
-      : []
-  ); //'aaa,bbb,ccc'=>['aaa', 'bbb', 'ccc']
+      ? localStorage.getItem("toDoList").split(",") //<-- true: 對字串做split, 可直接得到array, ex: 'aaa,bbb,ccc'=>['aaa', 'bbb', 'ccc']
+      : [] //<-- false: 給一個空的陣列即可
+  ); 
 
   return (
     <ContextStore.Provider value={{ appReducer: appReducer }}>
