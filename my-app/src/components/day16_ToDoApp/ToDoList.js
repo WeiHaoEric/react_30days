@@ -4,12 +4,9 @@ import { ContextStore } from "./ToDoApp";
 export default function ToDoList() {
   const { appReducer } = useContext(ContextStore);
   const toDoList = appReducer[0];
+  const result = toDoList.map((e, idx) => (<p key={`cmd-${idx}`}>{e}</p>));
 
-  return (
-    <div>
-      {
-        toDoList.map((e) => (<p>{e}</p>) )
-      }
-    </div>
-  );
+  return result
+    
+  ;
 }

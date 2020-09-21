@@ -1,9 +1,13 @@
-export default function reducers(toDoList, action){
-    switch(action.type){
-        case "ADD":
-            return toDoList.push(action.newEvent);
+export default function reducers(toDoList, action) {
+  const newToDoList = [...toDoList];
+  switch (action.type) {
+    case "ADD":
+      newToDoList.push(action.newEvent); //<-- 先push
+      break;
+    default:
+      console.log("toDoList", toDoList);  //<--直接印出舊的
+      break;
+  }
 
-        default:
-            return toDoList;
-    }
+  return newToDoList;  //<--不管動作如何，直接回傳複製過來的newToDoList
 }

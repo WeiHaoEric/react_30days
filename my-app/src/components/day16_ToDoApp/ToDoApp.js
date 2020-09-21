@@ -6,7 +6,7 @@ import Input from "./Input";
 export const ContextStore = createContext();
 
 export default function ToDoApp() {
-  const appReducer = useReducer(reducers, ["Hello", "One", "Two"]);
+  const appReducer = useReducer(reducers, []);
 
   return (
     <ContextStore.Provider value={{ appReducer: appReducer }}>
