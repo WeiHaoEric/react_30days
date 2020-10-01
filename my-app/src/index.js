@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToDoList from "./components/day18_ToDoApp/ToDoApp"
+import Calendar from "./components/day28_calendar/Calendar"
 
 ReactDOM.render(
-  <ToDoList/>,
+  <Calendar/>,
   document.getElementById('root')
 );

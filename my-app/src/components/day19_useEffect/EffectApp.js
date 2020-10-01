@@ -17,7 +17,7 @@ export default function EffectApp() {
     console.log("=== area2 ===");
     console.log("[state2]: ComponentDidMount...");
     return () => console.log("[state2]: ComponentDidUpdate!!!");  
-  },[]);
+  },[]); //<-- 給空的陣列，看看會有什麼有趣的事
 
   let handleClick = (setState, aState) => {
     return (e) => {
