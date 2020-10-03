@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import * as Styles from "../styles";
+import { AppStore }from "../Calendar";
 
 export default function Header(){
+  const { timeReducer } = useContext(AppStore);
+  const dispatch = timeReducer[1];
+
   let handleLastMonthEvent = ()=>{
-    console.log("click last month")
+    dispatch({type:"LAST_MONTH"});
     return (e)=>{}
   }   
   let handleNextMonthEvent = ()=>{
-    console.log("click next month")
+    dispatch({type:"NEXT_MONTH"})  
     return (e)=>{}
   }
 
