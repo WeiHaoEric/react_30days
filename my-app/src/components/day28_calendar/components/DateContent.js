@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import getWeeksInMonth from "../utils";
 import * as Styles from "../styles";
+import { AppStore }from "../Calendar";
 
 export default function DateContent(){
-    let weekContentList = getWeeksInMonth();
+    const {timeReducer} =  useContext(AppStore);
+    const mmt = timeReducer[0];
+
+    let weekContentList = getWeeksInMonth(mmt);
     let result = [];
     return (
       <div className="DateContainer" style={Styles.DateContainer}>

@@ -1,4 +1,3 @@
-import moment from "moment";
 
 // GLobal Vars
 const SEVENDAYS = 7; // 建立一個通用變數，存放一週有7天
@@ -26,8 +25,7 @@ function processWeekDays(mmt, isFirstWeek=false){
   return {weekDays, isFinished};
 }
 
-export default function getWeeksInMonth(){
-  const mmt = new moment();
+export default function getWeeksInMonth(mmt){
   const weekDayList = [];
 
   // first weekDays
